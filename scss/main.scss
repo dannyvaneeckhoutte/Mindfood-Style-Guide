@@ -18,12 +18,12 @@ $secondary: #c2948a;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(6, auto);
     gap: 20px 20px;
-    grid-template-areas: "header header" "colors colors" "fonts fonts" "styles styles" "footer footer";
+    grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts fonts" "styles styles" "footer footer";
     @media only screen and (min-width: 600px) {
-        grid-template-rows: repeat(4, auto);
-        grid-template-areas: "header header" "colors colors" "fonts styles" "footer footer";
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts styles" "footer footer";
     }
 }
 
@@ -33,6 +33,10 @@ $secondary: #c2948a;
 
 .colors {
     grid-area: colors;
+}
+
+.gradient {
+    grid-area: gradient;
 }
 
 .fonts {
@@ -126,10 +130,14 @@ section {
                 &:last-of-type {
                     background-color: $background;
                     color: $text;
-                    margin: 0;
+                    margin-right: 0;
                 }
             }
         }
+    }
+    &.gradient {
+        background: linear-gradient(345deg, rgba(194, 148, 138, 1) 0%, rgba(126, 168, 190, 1) 100%);
+        color: $background;
     }
     &.fonts {
         h1 {

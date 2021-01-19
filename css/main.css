@@ -104,19 +104,22 @@ select {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, auto);
+  grid-template-rows: repeat(6, auto);
   gap: 20px 20px;
-  grid-template-areas: "header header" "colors colors" "fonts fonts" "styles styles" "footer footer"; }
+  grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts fonts" "styles styles" "footer footer"; }
   @media only screen and (min-width: 600px) {
     .grid-container {
-      grid-template-rows: repeat(4, auto);
-      grid-template-areas: "header header" "colors colors" "fonts styles" "footer footer"; } }
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts styles" "footer footer"; } }
 
 .header {
   grid-area: header; }
 
 .colors {
   grid-area: colors; }
+
+.gradient {
+  grid-area: gradient; }
 
 .fonts {
   grid-area: fonts; }
@@ -191,7 +194,10 @@ section {
       section.colors .card-wrapper .card:last-of-type {
         background-color: #f2f2f2;
         color: #312f2f;
-        margin: 0; }
+        margin-right: 0; }
+  section.gradient {
+    background: linear-gradient(345deg, #c2948a 0%, #7ea8be 100%);
+    color: #f2f2f2; }
   section.fonts h1 {
     margin-bottom: 0; }
   section.fonts span {
