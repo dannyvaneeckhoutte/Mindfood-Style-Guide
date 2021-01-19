@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Source+Sans+Pro&display=swap");
+html,
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.4; }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important; } }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.65rem; }
+
+h1 {
+  font-size: 1.65em;
+  /* Default size === h2 */ }
+
+p {
+  margin: 0 0 0.55rem; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover {
+  text-decoration: underline; }
+
+a:focus {
+  outline: thin dotted; }
+
+ul,
+ol,
+dd {
+  margin: 0;
+  padding: 1rem;
+  list-style: none; }
+
+button {
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer; }
+
+img,
+video {
+  max-width: 100%;
+  height: auto; }
+
+figure {
+  margin: 0; }
+
+figcaption {
+  font-size: 0.9em; }
+
+cite {
+  font-style: normal; }
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+  margin: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input,
+button,
+textarea,
+select {
+  box-sizing: border-box;
+  margin: 0.25em 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  font: inherit;
+  line-height: 1; }
+
+.grid-container {
+  padding: 1em;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 20px 20px;
+  grid-template-areas: "header header" "colors colors" "fonts fonts" "styles styles" "footer footer"; }
+  @media only screen and (min-width: 600px) {
+    .grid-container {
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas: "header header" "colors colors" "fonts styles" "footer footer"; } }
+
+.header {
+  grid-area: header; }
+
+.colors {
+  grid-area: colors; }
+
+.fonts {
+  grid-area: fonts; }
+
+.styles {
+  grid-area: styles; }
+
+.footer {
+  grid-area: footer; }
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #f2f2f2;
+  color: #312f2f;
+  font-size: 16px; }
+
+a {
+  color: #c2948a; }
+
+h1,
+h2 {
+  font-family: "Poppins", sans-serif;
+  margin-left: 0; }
+
+h1 {
+  font-size: 38px; }
+
+h2 {
+  font-size: 24px; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+header {
+  padding: 1em; }
+  header h1 {
+    color: #7ea8be; }
+
+section {
+  background-color: #e5e5e5;
+  padding: 2em;
+  border-radius: 15px; }
+  section h2 {
+    margin-bottom: 1em; }
+  section.colors .card-wrapper {
+    display: flex;
+    justify-content: space-between; }
+    @media only screen and (max-width: 600px) {
+      section.colors .card-wrapper {
+        display: block; } }
+    section.colors .card-wrapper .card {
+      background-color: #312f2f;
+      color: #f2f2f2;
+      margin: 0 0 1em;
+      padding: 1em;
+      border-radius: 10px;
+      width: auto; }
+      section.colors .card-wrapper .card h2 {
+        margin-left: 0; }
+      @media only screen and (min-width: 600px) {
+        section.colors .card-wrapper .card {
+          width: 25%;
+          margin: 0 1em; } }
+      @media only screen and (min-width: 600px) {
+        section.colors .card-wrapper .card:first-of-type {
+          margin-left: 0; } }
+      section.colors .card-wrapper .card:nth-of-type(2) {
+        background-color: #7ea8be; }
+      section.colors .card-wrapper .card:nth-of-type(3) {
+        background-color: #c2948a; }
+      section.colors .card-wrapper .card:last-of-type {
+        background-color: #f2f2f2;
+        color: #312f2f;
+        margin: 0; }
+  section.fonts h1 {
+    margin-bottom: 0; }
+  section.fonts span {
+    font-size: 80px; }
+  section.fonts .font-source {
+    margin-top: 4em; }
+    section.fonts .font-source h1,
+    section.fonts .font-source p,
+    section.fonts .font-source a {
+      font-family: "Source Sans Pro", sans-serif; }
+  section.styles .heading,
+  section.styles .subheading {
+    margin-bottom: 3em; }
+  section.styles .heading {
+    margin-top: 2em; }
+  section.styles .paragraph {
+    margin-bottom: 2em; }
+
+footer p {
+  font-size: 14px;
+  color: #7ea8be;
+  text-align: center; }

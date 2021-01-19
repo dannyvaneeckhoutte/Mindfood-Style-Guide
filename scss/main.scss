@@ -1,0 +1,170 @@
+@import "../scss/reset.scss";
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Source+Sans+Pro&display=swap');
+$font-heading: 'Poppins',
+sans-serif;
+$font-text: 'Source Sans Pro',
+sans-serif;
+// Colors
+$text: #312f2f;
+$background: #f2f2f2;
+$gray: #e5e5e5;
+$primary: #7ea8be;
+$secondary: #c2948a;
+// Grid
+.grid-container {
+    padding: 1em;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 20px 20px;
+    grid-template-areas: "header header" "colors colors" "fonts fonts" "styles styles" "footer footer";
+    @media only screen and (min-width: 600px) {
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "header header" "colors colors" "fonts styles" "footer footer";
+    }
+}
+
+.header {
+    grid-area: header;
+}
+
+.colors {
+    grid-area: colors;
+}
+
+.fonts {
+    grid-area: fonts;
+}
+
+.styles {
+    grid-area: styles;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+body {
+    font-family: $font-text;
+    background-color: $background;
+    color: $text;
+    font-size: 16px;
+}
+
+a {
+    color: $secondary;
+}
+
+h1,
+h2 {
+    font-family: $font-heading;
+    margin-left: 0;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 1em;
+    h1 {
+        color: $primary;
+    }
+}
+
+section {
+    background-color: $gray;
+    padding: 2em;
+    border-radius: 15px;
+    h2 {
+        margin-bottom: 1em;
+    }
+    &.colors {
+        .card-wrapper {
+            display: flex;
+            justify-content: space-between;
+            @media only screen and (max-width: 600px) {
+                display: block;
+            }
+            .card {
+                background-color: $text;
+                color: $background;
+                margin: 0 0 1em;
+                padding: 1em;
+                border-radius: 10px;
+                width: auto;
+                h2 {
+                    margin-left: 0;
+                }
+                @media only screen and (min-width: 600px) {
+                    width: 25%;
+                    margin: 0 1em;
+                }
+                &:first-of-type {
+                    @media only screen and (min-width: 600px) {
+                        margin-left: 0;
+                    }
+                }
+                &:nth-of-type(2) {
+                    background-color: $primary;
+                }
+                &:nth-of-type(3) {
+                    background-color: $secondary;
+                }
+                &:last-of-type {
+                    background-color: $background;
+                    color: $text;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    &.fonts {
+        h1 {
+            margin-bottom: 0;
+        }
+        span {
+            font-size: 80px;
+        }
+        .font-source {
+            margin-top: 4em;
+            h1,
+            p,
+            a {
+                font-family: $font-text;
+            }
+        }
+    }
+    &.styles {
+        .heading,
+        .subheading {
+            margin-bottom: 3em;
+        }
+        .heading {
+            margin-top: 2em;
+        }
+        .paragraph {
+            margin-bottom: 2em;
+        }
+    }
+}
+
+footer {
+    p {
+        font-size: 14px;
+        color: $primary;
+        text-align: center;
+    }
+}
