@@ -3,8 +3,6 @@
 A Code Academy Challenge. <br>
 [Link to the challenge](https://www.codecademy.com/practice/projects/independent-project-web-design-system)
 
----
-
 > Objective: Build a Website Design System.
 
 ### Project Goals
