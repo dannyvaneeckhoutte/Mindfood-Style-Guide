@@ -11,5 +11,5 @@ In this project, you’ll be building your own basic design system for a website
 
 ### Screeshots
 
-[desktop view](/screenshots/screen_desktop.png)
-[mobile view](/screenshots/screen_mobile.png)
+![desktop view](/screenshots/screen_desktop.png)
+![mobile view](/screenshots/screen_mobile.png)
