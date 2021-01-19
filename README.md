@@ -1,49 +1,12 @@
-![image caption](image.png)
+# Mindfood Style Guide
 
-# Project Title - Readme.md HTML Template
-
-Intro - Boilerplate for Readme.md on Github
+A Code Academy Challenge. <br>
+[Link to the challenge](https://www.codecademy.com/practice/projects/independent-project-web-design-system)
 
 ---
 
-Describe you project -> I hate to always "reinvent" README.md on GitHub that is why I decided to make this Starter README.md template. Also I prefer HTML syntax because I use HTML every day and it has some extra features like center the elements.
+> Objective: Build a Website Design System.
 
-### List of features
+### Project Goals
 
-- Beautiful Starter Template for README.md
-- Key feature num. 2
-- Key feature num. 3
-- Key feature num. 4
-
-### Demo -> Show me what you got
-
-[Link to your awesome Demo](#)
-
-[Another Link to your awesome Demo](#)
-
-### Code Demo
-
-```html We will use markdown for the Syntax Highlighting
-<li>Beautiful Starter Template for README.md</li>
-<li>Key feature num. 2</li>
-<li>Key feature num. 3</li>
-<li>Key feature num. 4</li>
-```
-
-### Download & Installation
-
-```shell
-$ npm i boilerplate-readme-template
-```
-
-### Contributing
-
-Keep it simple. Keep it minimal. Don't put every single feature just because you can.
-
-### Authors or Acknowledgments
-
-- Vladimir Carrer
-
-### License
-
-This project is licensed under the MIT License
+In this project, you’ll be building your own basic design system for a website. In essence, you’ll be building a website to help you build MORE websites in the future! On your site, you’ll collect all the colors, fonts, and some of the repeating styles.
