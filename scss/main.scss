@@ -1,279 +1,276 @@
 @import "../scss/reset.scss";
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
-$font-heading: 'Poppins',
-sans-serif;
-$font-text: 'Source Sans Pro',
-sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+$font-heading: "Poppins", sans-serif;
+$font-text: "Source Sans Pro", sans-serif;
 // Colors
 $text: #312f2f;
 $background: #f2f2f2;
 $gray: #e5e5e5;
 $primary: #7ea8be;
 $secondary: #c2948a;
-$gradient: linear-gradient(345deg,
-rgba(194, 148, 138, 1) 0%,
-rgba(126, 168, 190, 1) 100%);
+$gradient: linear-gradient(
+  345deg,
+  rgba(194, 148, 138, 1) 0%,
+  rgba(126, 168, 190, 1) 100%
+);
 // Grid
 .grid-container {
-    padding: 1em;
-    max-width: 1280px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, auto);
-    gap: 20px 20px;
-    grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts fonts" "styles styles" "buttons buttons" "footer footer";
-    @media only screen and (min-width: 600px) {
-        grid-template-rows: repeat(5, auto);
-        grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts styles" "buttons buttons" "footer footer";
-    }
+  padding: 1em;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, auto);
+  gap: 20px 20px;
+  grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts fonts" "styles styles" "buttons buttons" "footer footer";
+  @media only screen and (min-width: 600px) {
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts styles" "buttons buttons" "footer footer";
+  }
 }
 
 .header {
-    grid-area: header;
+  grid-area: header;
 }
 
 .colors {
-    grid-area: colors;
+  grid-area: colors;
 }
 
 .gradient {
-    grid-area: gradient;
+  grid-area: gradient;
 }
 
 .fonts {
-    grid-area: fonts;
+  grid-area: fonts;
 }
 
 .styles {
-    grid-area: styles;
+  grid-area: styles;
 }
 
 .buttons {
-    grid-area: buttons;
+  grid-area: buttons;
 }
 
 .footer {
-    grid-area: footer;
+  grid-area: footer;
 }
 
 body {
-    font-family: $font-text;
-    background-color: $background;
-    color: $text;
-    font-size: 16px;
+  font-family: $font-text;
+  background-color: $background;
+  color: $text;
+  font-size: 16px;
 }
 
 a {
-    color: $secondary;
+  color: $secondary;
 }
 
 h1,
 h2 {
-    font-family: $font-heading;
-    margin-left: 0;
+  font-family: $font-heading;
+  margin-left: 0;
 }
 
 h1 {
-    font-size: 32px;
-    font-weight: 600;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 h2 {
-    font-size: 24px;
-    font-weight: 500;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    padding: 1em;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  h1 {
+    margin-top: 0;
+  }
+  .toggle {
+    margin-top: 0.8em;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    h1 {
-        color: $primary;
-        margin-top: 0;
+    .fas {
+      font-size: 1.2em;
     }
-    .toggle {
-        margin-top: 0.8em;
-        display: flex;
-        justify-content: space-between;
-        .fas {
-            font-size: 1.2em;
-            color: $secondary;
-        }
-    }
+  }
 }
 
 section {
-    background-color: $gray;
-    padding: 2em;
-    border-radius: 15px;
-    h2 {
-        margin-bottom: 1em;
-    }
-    &.colors {
-        .card-wrapper {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            @media only screen and (min-width: 900px) {
-                flex-direction: row;
-            }
-            .card {
-                background-color: $text;
-                color: $background;
-                margin: 0 0 1em;
-                padding: 1em;
-                border-radius: 10px;
-                width: auto;
-                h2 {
-                    margin-left: 0;
-                }
-                @media only screen and (min-width: 900px) {
-                    width: 25%;
-                    margin: 0 1em;
-                }
-                &:first-of-type {
-                    @media only screen and (min-width: 600px) {
-                        margin-left: 0;
-                    }
-                }
-                &:nth-of-type(2) {
-                    background-color: $primary;
-                }
-                &:nth-of-type(3) {
-                    background-color: $secondary;
-                }
-                &:last-of-type {
-                    background-color: $background;
-                    color: $text;
-                    margin-right: 0;
-                }
-            }
-        }
-    }
-    &.gradient {
-        background: $gradient;
+  background-color: $gray;
+  padding: 2em;
+  border-radius: 5px;
+  h2 {
+    margin-bottom: 1em;
+  }
+  &.colors {
+    .card-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      @media only screen and (min-width: 900px) {
+        flex-direction: row;
+      }
+      .card {
+        background-color: $text;
         color: $background;
+        margin: 0 0 1em;
+        padding: 1em;
+        border-radius: 3px;
+        width: auto;
+        h2 {
+          margin-left: 0;
+        }
+        @media only screen and (min-width: 900px) {
+          width: 25%;
+          margin: 0 1em;
+        }
+        &:first-of-type {
+          @media only screen and (min-width: 600px) {
+            margin-left: 0;
+          }
+        }
+        &:nth-of-type(2) {
+          background-color: $primary;
+        }
+        &:nth-of-type(3) {
+          background-color: $secondary;
+        }
+        &:last-of-type {
+          background-color: $background;
+          color: $text;
+          margin-right: 0;
+        }
+      }
     }
-    &.fonts {
-        h1 {
-            margin-bottom: 0;
-        }
-        span {
-            font-size: 80px;
-        }
-        .font-source {
-            margin-top: 4em;
-            h1,
-            p,
-            a {
-                font-family: $font-text;
-            }
-        }
+  }
+  &.gradient {
+    background: $gradient;
+    color: $background;
+  }
+  &.fonts {
+    h1 {
+      margin-bottom: 0;
     }
-    &.styles {
-        .heading,
-        .subheading {
-            margin-bottom: 3em;
-        }
-        .heading {
-            margin-top: 2em;
-        }
-        .paragraph {
-            margin-bottom: 2em;
-        }
+    span {
+      font-size: 80px;
     }
-    &.buttons {
-        .button-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: column;
-            @media only screen and (min-width: 900px) {
-                flex-direction: row;
-            }
-            button {
-                min-width: 140px;
-                padding: 0.8em 1.6em;
-                padding-left: 0.9em;
-                margin: 1em;
-                color: $background;
-                font-family: $font-heading;
-                &:hover {
-                    -webkit-filter: brightness(0.95);
-                    filter: brightness(0.95);
-                }
-                &:active {
-                    transform: translateY(1px);
-                }
-                &#btn-1 {
-                    background: $primary;
-                }
-                &#btn-2 {
-                    background: $secondary;
-                }
-                &#btn-3 {
-                    background: $gradient;
-                }
-                &#btn-4 {
-                    background: none;
-                    border: 2px solid $primary;
-                    color: $primary;
-                }
-            }
-        }
+    .font-source {
+      margin-top: 4em;
+      h1,
+      p,
+      a {
+        font-family: $font-text;
+      }
     }
+  }
+  &.styles {
+    .heading,
+    .subheading {
+      margin-bottom: 3em;
+    }
+    .heading {
+      margin-top: 2em;
+    }
+    .paragraph {
+      margin-bottom: 2em;
+    }
+  }
+  &.buttons {
+    .button-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      @media only screen and (min-width: 900px) {
+        flex-direction: row;
+      }
+      button {
+        min-width: 140px;
+        padding: 0.8em 1.6em;
+        padding-left: 0.9em;
+        margin: 1em;
+        color: $background;
+        font-family: $font-heading;
+        border-radius: 3px;
+        &:hover {
+          -webkit-filter: brightness(0.95);
+          filter: brightness(0.95);
+        }
+        &:active {
+          transform: translateY(1px);
+        }
+        &#btn-1 {
+          background: $primary;
+        }
+        &#btn-2 {
+          background: $secondary;
+        }
+        &#btn-3 {
+          background: $gradient;
+        }
+        &#btn-4 {
+          background: none;
+          border: 2px solid $primary;
+          color: $primary;
+        }
+      }
+    }
+  }
 }
 
 footer {
-    p {
-        font-size: 14px;
-        color: $primary;
-        text-align: center;
-    }
+  p {
+    font-size: 14px;
+    text-align: center;
+  }
 }
 
 .fas {
-    font-size: smaller;
-    margin: 0 0.6em;
+  font-size: smaller;
+  margin: 0 0.6em;
 }
-
 
 /** Switch
  -------------------------------------*/
 
 .switch {
-    input {
-        position: absolute;
-        opacity: 0;
-        &:checked {
-            + {
-                div {
-                    transform: translate3d(100%, 0, 0);
-                }
-            }
+  input {
+    position: absolute;
+    opacity: 0;
+    &:checked {
+      + {
+        div {
+          transform: translate3d(100%, 0, 0);
         }
+      }
     }
-    display: inline-block;
-    font-size: 20px;
+  }
+  display: inline-block;
+  font-size: 20px;
+  height: 1em;
+  width: 2em;
+  background: $text;
+  border-radius: 1em;
+  div {
     height: 1em;
-    width: 2em;
-    background: #c2948a;
+    width: 1em;
     border-radius: 1em;
-    div {
-        height: 1em;
-        width: 1em;
-        border-radius: 1em;
-        background: #c2948a;
-        border: 2px solid #f2f2f2;
-        transition: all 300ms;
-    }
+    background: $text;
+    border: 2px solid #f2f2f2;
+    transition: all 300ms;
+  }
 }
