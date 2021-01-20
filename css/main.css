@@ -106,11 +106,11 @@ select {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, auto);
   gap: 20px 20px;
-  grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts fonts" "styles styles" "footer footer"; }
+  grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts fonts" "styles styles" "buttons buttons" "footer footer"; }
   @media only screen and (min-width: 600px) {
     .grid-container {
       grid-template-rows: repeat(5, auto);
-      grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts styles" "footer footer"; } }
+      grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts styles" "buttons buttons" "footer footer"; } }
 
 .header {
   grid-area: header; }
@@ -126,6 +126,9 @@ select {
 
 .styles {
   grid-area: styles; }
+
+.buttons {
+  grid-area: buttons; }
 
 .footer {
   grid-area: footer; }
@@ -145,7 +148,7 @@ h2 {
   margin-left: 0; }
 
 h1 {
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 600; }
 
 h2 {
@@ -157,9 +160,20 @@ ul {
   padding: 0; }
 
 header {
-  padding: 1em; }
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
   header h1 {
-    color: #7ea8be; }
+    color: #7ea8be;
+    margin-top: 0; }
+  header .toggle {
+    margin-top: 0.8em;
+    display: flex;
+    justify-content: space-between; }
+    header .toggle .fas {
+      font-size: 1em;
+      color: #c2948a; }
 
 section {
   background-color: #e5e5e5;
@@ -169,10 +183,12 @@ section {
     margin-bottom: 1em; }
   section.colors .card-wrapper {
     display: flex;
-    justify-content: space-between; }
-    @media only screen and (max-width: 600px) {
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+    @media only screen and (min-width: 900px) {
       section.colors .card-wrapper {
-        display: block; } }
+        flex-direction: row; } }
     section.colors .card-wrapper .card {
       background-color: #312f2f;
       color: #f2f2f2;
@@ -182,7 +198,7 @@ section {
       width: auto; }
       section.colors .card-wrapper .card h2 {
         margin-left: 0; }
-      @media only screen and (min-width: 600px) {
+      @media only screen and (min-width: 900px) {
         section.colors .card-wrapper .card {
           width: 25%;
           margin: 0 1em; } }
@@ -217,8 +233,68 @@ section {
     margin-top: 2em; }
   section.styles .paragraph {
     margin-bottom: 2em; }
+  section.buttons .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; }
+    @media only screen and (min-width: 900px) {
+      section.buttons .button-wrapper {
+        flex-direction: row; } }
+    section.buttons .button-wrapper button {
+      min-width: 140px;
+      padding: 0.8em 1.6em;
+      padding-left: 0.9em;
+      margin: 1em;
+      color: #f2f2f2;
+      font-family: "Poppins", sans-serif; }
+      section.buttons .button-wrapper button:hover {
+        -webkit-filter: brightness(0.95);
+        filter: brightness(0.95); }
+      section.buttons .button-wrapper button:active {
+        transform: translateY(1px); }
+      section.buttons .button-wrapper button#btn-1 {
+        background: #7ea8be; }
+      section.buttons .button-wrapper button#btn-2 {
+        background: #c2948a; }
+      section.buttons .button-wrapper button#btn-3 {
+        background: linear-gradient(345deg, #c2948a 0%, #7ea8be 100%); }
+      section.buttons .button-wrapper button#btn-4 {
+        background: none;
+        border: 2px solid #7ea8be;
+        color: #7ea8be; }
 
 footer p {
   font-size: 14px;
   color: #7ea8be;
   text-align: center; }
+
+.fas {
+  font-size: smaller;
+  margin: 0 0.6em; }
+
+/** Switch
+ -------------------------------------*/
+.switch input {
+  position: absolute;
+  opacity: 0; }
+
+.switch {
+  display: inline-block;
+  font-size: 20px;
+  /* 1 */
+  height: 0.8em;
+  width: 1.6em;
+  background: #c2948a;
+  border-radius: 1em; }
+
+.switch div {
+  height: 0.8em;
+  width: 0.8em;
+  border-radius: 0.8em;
+  background: #c2948a;
+  border: 2px solid #f2f2f2;
+  transition: all 300ms; }
+
+.switch input:checked + div {
+  transform: translate3d(100%, 0, 0); }

@@ -11,6 +11,9 @@ $background: #f2f2f2;
 $gray: #e5e5e5;
 $primary: #7ea8be;
 $secondary: #c2948a;
+$gradient: linear-gradient(345deg,
+rgba(194, 148, 138, 1) 0%,
+rgba(126, 168, 190, 1) 100%);
 // Grid
 .grid-container {
     padding: 1em;
@@ -20,10 +23,10 @@ $secondary: #c2948a;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, auto);
     gap: 20px 20px;
-    grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts fonts" "styles styles" "footer footer";
+    grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts fonts" "styles styles" "buttons buttons" "footer footer";
     @media only screen and (min-width: 600px) {
         grid-template-rows: repeat(5, auto);
-        grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts styles" "footer footer";
+        grid-template-areas: "header header" "colors colors" "gradient gradient" "fonts styles" "buttons buttons" "footer footer";
     }
 }
 
@@ -45,6 +48,10 @@ $secondary: #c2948a;
 
 .styles {
     grid-area: styles;
+}
+
+.buttons {
+    grid-area: buttons;
 }
 
 .footer {
@@ -69,7 +76,7 @@ h2 {
 }
 
 h1 {
-    font-size: 38px;
+    font-size: 32px;
     font-weight: 600;
 }
 
@@ -85,8 +92,21 @@ ul {
 
 header {
     padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     h1 {
         color: $primary;
+        margin-top: 0;
+    }
+    .toggle {
+        margin-top: 0.8em;
+        display: flex;
+        justify-content: space-between;
+        .fas {
+            font-size: 1em;
+            color: $secondary;
+        }
     }
 }
 
@@ -101,8 +121,10 @@ section {
         .card-wrapper {
             display: flex;
             justify-content: space-between;
-            @media only screen and (max-width: 600px) {
-                display: block;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            @media only screen and (min-width: 900px) {
+                flex-direction: row;
             }
             .card {
                 background-color: $text;
@@ -114,7 +136,7 @@ section {
                 h2 {
                     margin-left: 0;
                 }
-                @media only screen and (min-width: 600px) {
+                @media only screen and (min-width: 900px) {
                     width: 25%;
                     margin: 0 1em;
                 }
@@ -138,7 +160,7 @@ section {
         }
     }
     &.gradient {
-        background: linear-gradient(345deg, rgba(194, 148, 138, 1) 0%, rgba(126, 168, 190, 1) 100%);
+        background: $gradient;
         color: $background;
     }
     &.fonts {
@@ -169,6 +191,46 @@ section {
             margin-bottom: 2em;
         }
     }
+    &.buttons {
+        .button-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            @media only screen and (min-width: 900px) {
+                flex-direction: row;
+            }
+            button {
+                min-width: 140px;
+                padding: 0.8em 1.6em;
+                padding-left: 0.9em;
+                margin: 1em;
+                color: $background;
+                font-family: $font-heading;
+                &:hover {
+                    -webkit-filter: brightness(0.95);
+                    filter: brightness(0.95);
+                }
+                &:active {
+                    transform: translateY(1px);
+                }
+                &#btn-1 {
+                    background: $primary;
+                }
+                &#btn-2 {
+                    background: $secondary;
+                }
+                &#btn-3 {
+                    background: $gradient;
+                }
+                &#btn-4 {
+                    background: none;
+                    border: 2px solid $primary;
+                    color: $primary;
+                }
+            }
+        }
+    }
 }
 
 footer {
@@ -177,4 +239,41 @@ footer {
         color: $primary;
         text-align: center;
     }
+}
+
+.fas {
+    font-size: smaller;
+    margin: 0 0.6em;
+}
+
+
+/** Switch
+ -------------------------------------*/
+
+.switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+.switch {
+    display: inline-block;
+    font-size: 20px;
+    /* 1 */
+    height: 0.8em;
+    width: 1.6em;
+    background: $secondary;
+    border-radius: 1em;
+}
+
+.switch div {
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 0.8em;
+    background: $secondary;
+    border: 2px solid $background;
+    transition: all 300ms;
+}
+
+.switch input:checked+div {
+    transform: translate3d(100%, 0, 0);
 }
